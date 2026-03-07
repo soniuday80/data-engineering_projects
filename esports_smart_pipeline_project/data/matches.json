@@ -1,0 +1,30 @@
+[
+  {
+    "match_id": "match_001",
+    "tournament": "World Championship 2024",
+    "stage": "Quarter Finals",
+    "team_blue": {
+      "name": "Team Phoenix",
+      "players": [
+        {"player_id": "player_blue_01", "username": "Phoenix_Flash", "champion": "Jhin", "role": "ADC"},
+        {"player_id": "player_blue_02", "username": "Phoenix_Blaze", "champion": "Zed", "role": "Mid"},
+        {"player_id": "player_blue_03", "username": "Phoenix_Wing", "champion": "Lee Sin", "role": "Jungle"},
+        {"player_id": "player_blue_04", "username": "Phoenix_Talon", "champion": "Darius", "role": "Top"},
+        {"player_id": "player_blue_05", "username": "Phoenix_Eye", "champion": "Thresh", "role": "Support"}
+      ]
+    },
+    "team_red": {
+      "name": "Team Titan",
+      "players": [
+        {"player_id": "player_red_01", "username": "Titan_Hammer", "champion": "Caitlyn", "role": "ADC"},
+        {"player_id": "player_red_02", "username": "Titan_Shield", "champion": "Ahri", "role": "Mid"},
+        {"player_id": "player_red_03", "username": "Titan_Sword", "champion": "Khazix", "role": "Jungle"},
+        {"player_id": "player_red_04", "username": "Titan_Armor", "champion": "Garen", "role": "Top"},
+        {"player_id": "player_red_05", "username": "Titan_Helm", "champion": "Blitzcrank", "role": "Support"}
+      ]
+    },
+    "start_time": "2024-01-15T14:00:00Z",
+    "map": "Summoner's Rift",
+    "game_version": "14.1"
+  }
+]

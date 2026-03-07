@@ -1,0 +1,54 @@
+[
+  {
+    "event_id": "event_001",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:30Z",
+    "event_type": "KILL",
+    "player_id": "player_blue_03",
+    "target_id": "player_red_05",
+    "location": {"x": 1250, "y": 3400},
+    "gold_awarded": 300,
+    "game_time": 420
+  },
+  {
+    "event_id": "event_002", 
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:02:15Z",
+    "event_type": "OBJECTIVE",
+    "objective_type": "DRAGON",
+    "team": "BLUE",
+    "location": {"x": 5500, "y": 5500},
+    "game_time": 465
+  },
+  {
+    "event_id": "event_003",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:03:45Z",
+    "event_type": "ITEM_PURCHASE",
+    "player_id": "player_red_01",
+    "item_id": "item_sword_001",
+    "item_cost": 1100,
+    "game_time": 525
+  },
+  {
+    "event_id": "event_004",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:04:10Z",
+    "event_type": "KILL",
+    "player_id": "player_red_02",
+    "target_id": "player_blue_04",
+    "location": {"x": 3200, "y": 2100},
+    "gold_awarded": 450,
+    "game_time": 550
+  },
+  {
+    "event_id": "event_005",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:05:00Z",
+    "event_type": "ABILITY_USED",
+    "player_id": "player_blue_01",
+    "ability_id": "ability_flash",
+    "cooldown": 300,
+    "game_time": 600
+  }
+]

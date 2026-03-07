@@ -1,0 +1,52 @@
+[
+  {
+    "player_id": "player_blue_01",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:00Z",
+    "location": {"x": 1000, "y": 1200},
+    "facing_angle": 45,
+    "health": 850,
+    "mana": 320,
+    "game_time": 390
+  },
+  {
+    "player_id": "player_blue_01",
+    "match_id": "match_001", 
+    "timestamp": "2024-01-15T14:01:05Z",
+    "location": {"x": 1050, "y": 1250},
+    "facing_angle": 48,
+    "health": 850,
+    "mana": 310,
+    "game_time": 395
+  },
+  {
+    "player_id": "player_blue_01",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:10Z",
+    "location": {"x": 1100, "y": 1300},
+    "facing_angle": 50,
+    "health": 845,
+    "mana": 305,
+    "game_time": 400
+  },
+  {
+    "player_id": "player_red_05",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:28Z",
+    "location": {"x": 1240, "y": 3380},
+    "facing_angle": 220,
+    "health": 420,
+    "mana": 100,
+    "game_time": 418
+  },
+  {
+    "player_id": "player_red_05",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:30Z",
+    "location": {"x": 1250, "y": 3400},
+    "facing_angle": 225,
+    "health": 0,
+    "mana": 0,
+    "game_time": 420
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "alert_id": "alert_001",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:31Z",
+    "player_id": "player_blue_03",
+    "alert_type": "SUSPICIOUS_ACCURACY",
+    "description": "Player achieved 95% headshot rate over last 10 kills",
+    "confidence_score": 0.82,
+    "evidence": {
+      "avg_reaction_time_ms": 85,
+      "headshot_rate": 0.95,
+      "unusual_kills": 8
+    },
+    "game_time": 421
+  },
+  {
+    "alert_id": "alert_002",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:03:50Z",
+    "player_id": "player_red_01",
+    "alert_type": "UNUSUAL_MOVEMENT",
+    "description": "Player showing unnatural mouse movement patterns",
+    "confidence_score": 0.65,
+    "evidence": {
+      "movement_smoothness": 0.92,
+      "angle_changes": 45,
+      "prediction_deviation": 0.12
+    },
+    "game_time": 530
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "message_id": "chat_001",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:31Z",
+    "user": "GamerFan99",
+    "message": "OMG WHAT A KILL!!!",
+    "emotes": ["PogChamp"],
+    "is_subscriber": true,
+    "game_time": 421
+  },
+  {
+    "message_id": "chat_002",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:01:33Z",
+    "user": "EsportsWatcher",
+    "message": "Blue team is dominating!",
+    "emotes": [],
+    "is_subscriber": false,
+    "game_time": 423
+  },
+  {
+    "message_id": "chat_003",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:02:16Z",
+    "user": "DragonHunter",
+    "message": "BLUE TEAM GOT DRAGON LETS GOOOOO",
+    "emotes": ["Kappa", "PogChamp"],
+    "is_subscriber": true,
+    "game_time": 466
+  },
+  {
+    "message_id": "chat_004",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:03:00Z",
+    "user": "ToxicPlayer123",
+    "message": "red team sucks uninstall",
+    "emotes": [],
+    "is_subscriber": false,
+    "game_time": 510
+  },
+  {
+    "message_id": "chat_005",
+    "match_id": "match_001",
+    "timestamp": "2024-01-15T14:04:11Z",
+    "user": "StrategyGuru",
+    "message": "Nice comeback by red team!",
+    "emotes": ["NotLikeThis"],
+    "is_subscriber": true,
+    "game_time": 551
+  }
+]
