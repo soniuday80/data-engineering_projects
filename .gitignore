@@ -3,3 +3,10 @@ __pycache__/
 *.pyc
 venv/
 .env.local
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.lock.hcl
+*.p8
+*.pem
+*.key
