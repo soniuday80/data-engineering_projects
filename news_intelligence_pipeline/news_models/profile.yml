@@ -1,0 +1,16 @@
+news_model: 
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: {{$env_var(snowflake_org-account)}}
+
+      
+      user: {{$env_var(TF_VAR_snowflake_username)}}
+      password: {{$env_var(TF_VAR_snowflake_password)}}
+
+      role: SYSADMIN
+      database: NEWS_INTELLIGENCE_DB
+      warehouse: NEWS_INGESTION_WH
+      schema: DATA_SCHEMA  
+      threads: 4

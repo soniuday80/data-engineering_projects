@@ -1,0 +1,32 @@
+[0m19:53:08.518745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4F180FE00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4EF560190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4F236A990>]}
+
+
+============================== 19:53:08.530878 | a4cdad80-c700-49ed-a983-c1fb278a7ac2 ==============================
+[0m19:53:08.530878 [info ] [MainThread]: Running with dbt=1.11.7
+[0m19:53:08.532782 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\AYUSHREE\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'None', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'invocation_command': 'dbt init', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'use_experimental_parser': 'False'}
+[0m19:53:21.021959 [debug] [MainThread]: Starter project path: C:\Users\AYUSHREE\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m19:53:21.077126 [info ] [MainThread]: 
+Your new dbt project "news_models" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:53:21.077947 [info ] [MainThread]: Setting up your profile.
+[0m19:57:31.078086 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m19:57:31.078570 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m19:57:31.078849 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m20:05:40.370287 [info ] [MainThread]: Profile news_models written to C:\Users\AYUSHREE\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m20:05:40.429875 [debug] [MainThread]: Command `dbt init` succeeded at 20:05:40.428029 after 752.11 seconds
+[0m20:05:40.436186 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4FFE4D6E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4F3B16B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4FFE48C00>]}
+[0m20:05:40.441829 [debug] [MainThread]: Flushing usage events
+[0m20:05:41.664458 [debug] [MainThread]: An error was encountered while trying to flush usage events

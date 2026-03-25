@@ -1,4 +1,3 @@
-import pyflink 
 from pyflink.table import EnvironmentSettings, TableEnvironment
 
 # 1. Setup the execution environment
@@ -27,7 +26,7 @@ t_env.execute_sql("""
         'json.ignore-parse-errors' = 'true'   -- handles missing keys gracefully
     )
 """)
-# running the query
+# calculating the k/d
 t_env.query_sql("""
     WITH kills AS (
     SELECT player_id,

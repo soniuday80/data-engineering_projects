@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: NEWS_INTELLIGENCE_DB
+    description: "Raw data sources"
+    tables:
+      - name: RAW_NEWS  # Replace with your actual table name
+        description: "Table containing raw JSON data in variant column"
+        columns:
+          - name: ID
+            description: "Primary key"
+          - name: RAW_DATA
+            description: "Raw JSON content in VARIANT column"
+          - name: LOADED_AT
+            description: "Load timestamp"
