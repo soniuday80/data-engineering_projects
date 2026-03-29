@@ -10,3 +10,4 @@ venv/
 *.p8
 *.pem
 *.key
+logs/

@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_raw_json_model
+    description: |
+      Staged raw news JSON from the source table raw_news
+    
+    config:
+      materialized: view
+      tags: ['staging', 'hourly']
+    
+    data_tests:
+      - unique:
+          column_name: article_id
+      - not_null:
+          column_name: article_id
+    
+    columns:
+      - name: article_id
+        description: "Primary key for news. Unique identifier from source table"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: loaded_at
+        description: "Timestamp when data was loaded"
+        data_tests:
+          - not_null
+
+      - name: author
+        description: "Author of the news article"
+        data_tests:
+          - not_null
+      
+      - name: title
+        description: "Title of the news article"
+        data_tests:
+          - not_null
+      
+      - name: url
+        description: "URL of the news article"
+        data_tests:
+          - not_null
+
+      - name: published
+        description: "Publish date of the news article"
+        data_tests:
+          - not_null
+      
+      - name: content
+        description: "Content of the news article"
+        data_tests:
+          - not_null

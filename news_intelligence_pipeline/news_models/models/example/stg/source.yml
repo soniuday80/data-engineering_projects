@@ -4,7 +4,7 @@ sources:
   - name: NEWS_INTELLIGENCE_DB
     description: "Raw data sources"
     tables:
-      - name: RAW_NEWS  # Replace with your actual table name
+      - name: RAW_NEWS  
         description: "Table containing raw JSON data in variant column"
         columns:
           - name: ID

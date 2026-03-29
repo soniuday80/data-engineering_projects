@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fct_news
+    description: |
+      "news table that contain article is gonna be vectorsed"
+    
+    # Model-level configurations
+    config:
+      materialized: view
+      tags: ['intermediate', 'hourly']
+    
+    # Model-level tests
+    data_tests:
+      - unique:
+          column_name: article_id
+      - not_null:
+          column_name: article_id
+    
+    # Column definitions
+    columns:
+      - name: article_id
+        description: "Primary key for news. Unique identifier from source table"
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: title 
+        description: "cleaned title that will be vectorised"
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: URL
+        description: "cleaned url that will be vectorised"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: content 
+        description: "cleaned article that will be vectorised"
+        data_tests:
+          - unique
+          - not_null
