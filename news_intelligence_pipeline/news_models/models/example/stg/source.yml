@@ -2,6 +2,8 @@ version: 2
 
 sources:
   - name: NEWS_INTELLIGENCE_DB
+    database: NEWS_INTELLIGENCE_DB 
+    schema: DATA_SCHEMA
     description: "Raw data sources"
     tables:
       - name: RAW_NEWS  

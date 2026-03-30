@@ -19,10 +19,9 @@ parsed AS (
         {{ cleanse_html_tags('RAW_DATA:author::VARCHAR') }} AS author,
         {{ cleanse_html_tags('RAW_DATA:title::VARCHAR') }} AS title,
         RAW_DATA:url::VARCHAR AS url,
-        RAW_DATA:publish_at::TIMESTAMP AS published,
+        RAW_DATA:publishedAt::TIMESTAMP AS published,
         {{ cleanse_html_tags('RAW_DATA:content::VARCHAR') }} AS content,
         
-        -- Handle missing/null values
         CASE 
             WHEN RAW_DATA:timestamp IS NOT NULL 
             THEN RAW_DATA:timestamp::TIMESTAMP 
