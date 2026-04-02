@@ -38,10 +38,11 @@ def search(query: str):
         include_metadata=True
     )
 
+
     
    
 
-    filtered = [match for match in results.matches if match.score >= 0.3]
+    filtered = [match for match in results.matches if match.score >= 0.1]
     print("Filtered:", filtered) 
 
 
