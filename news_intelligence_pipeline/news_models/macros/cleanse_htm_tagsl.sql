@@ -1,25 +1,15 @@
-{% macro cleanse_html_tags(field_with_html_tags) %}
+{% macro cleanse_html_tags(field) %}
 
-{% set html_tags = [
-    '<[^>]*>',
-    '&nbsp;',
-    '&amp;',
-    '&lt;',
-    '&gt;',
-    '&quot;',
-    '&#39;',
-    ' ',
-    '&[a-zA-Z]+;',
-    '\\s+',
-    '^\\s+|\\s+$'
-] %}
-
-trim(regexp_replace(
+trim(
     regexp_replace(
-        regexp_replace({{ field_with_html_tags }}, '{{ html_tags|join('|') }}', ' '),
-        '\\s+', ' '
-    ),
-    '^\\s+|\\s+$', ''
-))
+        regexp_replace(
+            regexp_replace(
+                regexp_replace(
+                    regexp_replace({{ field }}, '<[^>]*>', ' '),
+                '&nbsp;|&amp;|&lt;|&gt;|&quot;|&#39;', ' '),
+            '&[a-zA-Z0-9]+;', ' '),
+        '[^a-zA-Z0-9\\s.,!?\'\"\\-]', ' '),
+    '\\s+', ' ')
+)
 
 {% endmacro %}
