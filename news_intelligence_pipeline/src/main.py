@@ -42,7 +42,7 @@ def search(query: str):
     
    
 
-    filtered = [match for match in results.matches if match.score >= 0.1]
+    filtered = [match for match in results.matches if match.score >= 0.1] # lowered the score 
     print("Filtered:", filtered) 
 
 
