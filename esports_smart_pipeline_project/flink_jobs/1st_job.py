@@ -1,57 +1,60 @@
 from pyflink.table import EnvironmentSettings, TableEnvironment
+import os
 
-# 1. Setup the execution environment
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
 settings = EnvironmentSettings.new_instance().in_streaming_mode().build()
 t_env = TableEnvironment.create(settings)
-# creating a table for the game events
+
+# Source: Read from Kafka # using kafka:29092 for docker, localhost:9092 for local
 t_env.execute_sql("""
     CREATE TABLE game_events (
-        event_id        STRING,
-        match_id        STRING,
-        event_type      STRING,
-        game_time       INT,
-        player_id       STRING,       -- NULL for OBJECTIVE
-        target_id       STRING,       -- only KILL
-        gold_awarded    INT,          -- only KILL
-        team            STRING,       -- only OBJECTIVE
-        objective_type  STRING,       -- only OBJECTIVE
-        item_id         STRING,       -- only ITEM_PURCHASE
-        item_cost       INT,          -- only ITEM_PURCHASE
-        ability_id      STRING,       -- only ABILITY_USED
-        cooldown        INT           -- only ABILITY_USED
+        event_id STRING,
+        player_id STRING,
+        event_type STRING,
+        gold_awarded INT,
+        game_time INT
     ) WITH (
         'connector' = 'kafka',
-        'topic'     = 'game-events',
-        'format'    = 'json',
-        'json.ignore-parse-errors' = 'true'   -- handles missing keys gracefully
+        'topic' = 'match-events',
+        'properties.bootstrap.servers' = 'kafka:29092',   
+        'format' = 'json',
+        'scan.startup.mode' = 'earliest-offset'
     )
 """)
-# calculating the k/d
-t_env.query_sql("""
-    WITH kills AS (
-    SELECT player_id,
-           COUNT(*) AS total_kills
-    FROM game_events
-    WHERE event_type = 'KILL'
-    GROUP BY player_id
-),
-deaths AS (
-    SELECT target_id AS player_id,
-           COUNT(*) AS total_deaths
-    FROM game_events
-    WHERE event_type = 'KILL'
-    GROUP BY target_id
-)
-SELECT
-    kills.player_id,
-    kills.total_kills        AS kills,
-    deaths.total_deaths      AS deaths,
-    kills.total_kills / NULLIF(deaths.total_deaths, 0) AS kd_ratio
-FROM kills
-LEFT JOIN deaths
-ON kills.player_id = deaths.player_id
-""").execute()
 
-# 4. Run the job
-t_env.from_path("source").insert_into("sink")
-t_env.execute("Esports Test Job")
+# Sink: Write to PostgreSQL/TimescaleDB
+t_env.execute_sql(f"""
+    CREATE TABLE players_stats_sink (
+        player_id STRING,
+        player_name STRING,
+        kd_ratio DOUBLE,
+        gold_per_minute DOUBLE
+    ) WITH (
+        'connector' = 'jdbc',
+        'url' = 'jdbc:postgresql://timescale:5432/esports_db',
+        'table-name' = 'players_stats',
+        'username' = '{os.getenv("DB_USERNAME", "postgres")}',
+        'password' = '{os.getenv("DB_PASSWORD", "postgres")}'
+    )
+""")
+
+# Process: Calculate stats
+result = t_env.sql_query("""
+    SELECT 
+        player_id,
+        'Unknown' as player_name,
+        COUNT(*) FILTER (WHERE event_type = 'KILL') * 1.0 / 
+            NULLIF(COUNT(*) FILTER (WHERE event_type = 'DEATH'), 0) as kd_ratio,
+        AVG(gold_awarded) as gold_per_minute
+    FROM game_events
+    GROUP BY player_id
+""")
+
+# Send to database
+result.execute_insert("players_stats_sink")
+
+# Run job
+t_env.execute("Esports Pipeline")
