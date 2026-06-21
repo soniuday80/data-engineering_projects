@@ -13,27 +13,12 @@ A semantic news search pipeline that ingests live news articles, transforms them
 
 📂 [View Project](./news_intelligence_pipeline)
 
----
-
-### 2. Esports Analytics Platform 🚧 (In Progress)
-A real-time esports analytics platform that processes live match events, player movements and audience data through a streaming pipeline, with ML-powered predictions and cheat detection.
-
-**Tech Stack:** Kafka · Apache Flink · TimescaleDB · Redis · PostgreSQL · Grafana · Prefect · Docker · scikit-learn
-
-📂 [View Project](./esports_analytics_pipeline)
-
-**Current Progress:**
-- Environment setup 
-- Kafka topics and basic ingestion pipeline
-
----
 
 ## Repository Structure
 
 ```
 data-engineering_projects/
 ├── news_intelligence_pipeline/    ← RAG pipeline (completed)
-└── esports_analytics_pipeline/    ← Streaming pipeline (in progress)
 ```
 
 ---
