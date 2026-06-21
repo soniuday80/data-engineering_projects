@@ -1,7 +1,7 @@
 # News Intelligence RAG Pipeline 🚀
 
 An end-to-end semantic news search pipeline that ingests live news articles, 
-transforms them with DBT, embeds them using sentence transformers, and serves 
+transforms them with DBT, embeds them , and serves 
 intelligent search results via a FastAPI endpoint.
 
 ---
