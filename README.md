@@ -7,7 +7,7 @@ intelligent search results via a FastAPI endpoint.
 ---
 
 ## Tech Stack
-Snowflake · DBT · Terraform · Pinecone · Sentence Transformers · FastAPI · Airflow · Docker
+Snowflake · DBT · Terraform · Pinecone · FastAPI · Airflow · Docker
 
 ---
 
